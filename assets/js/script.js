@@ -1,3 +1,4 @@
+//esercizio uno
 const saveUser = document.getElementById('saveUser');
 const newName = document.getElementById('name');
 const savebtn = document.getElementById('saveName');
@@ -33,3 +34,16 @@ savebtn.addEventListener('click', btnSave);
 removebtn.addEventListener('click', btnRemove);
 
 SavedName();
+
+//esercizio due
+const counterText =document.getElementById('counter');
+function Counter() {
+    let count=parseInt(sessionStorage.getItem('counter') || '0',10);
+
+    setInterval (() => {
+        count++;
+        sessionStorage.setItem('counter', count);
+        counterText.textContent= count;
+    },1000);
+}
+Counter();
